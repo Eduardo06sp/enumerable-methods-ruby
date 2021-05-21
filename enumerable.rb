@@ -28,4 +28,11 @@ module Enumerable
 
     truthy_elements
   end
+
+  def my_all?(&block)
+    truthy_elements = my_select(&block)
+    return true if truthy_elements.length == self.length
+
+    false
+  end
 end
