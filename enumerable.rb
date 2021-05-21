@@ -65,4 +65,16 @@ module Enumerable
 
     new_arr
   end
+
+  def my_inject(&block)
+    accumulator = self[0]
+
+    my_each_with_index do |el, index|
+      next if index.zero?
+
+      accumulator = block.call(accumulator, el)
+    end
+
+    accumulator
+  end
 end
