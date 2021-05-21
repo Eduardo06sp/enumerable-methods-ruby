@@ -55,4 +55,14 @@ module Enumerable
   def my_count(&block)
     my_select(&block).length
   end
+
+  def my_map
+    new_arr = []
+
+    my_each do |el|
+      new_arr.push(yield(el))
+    end
+
+    new_arr
+  end
 end
