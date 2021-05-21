@@ -51,4 +51,8 @@ module Enumerable
 
     true
   end
+
+  def my_count(&block)
+    my_select(&block).length
+  end
 end
