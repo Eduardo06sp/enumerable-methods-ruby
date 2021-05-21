@@ -35,4 +35,12 @@ module Enumerable
 
     false
   end
+
+  def my_any?
+    my_each do |el|
+      return true if yield(el)
+    end
+
+    false
+  end
 end
