@@ -78,3 +78,7 @@ module Enumerable
     accumulator
   end
 end
+
+def multiply_els(num_arr)
+  num_arr.my_inject { |product, num| product * num }
+end
