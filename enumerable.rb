@@ -56,11 +56,15 @@ module Enumerable
     my_select(&block).length
   end
 
-  def my_map
+  def my_map(arg = nil)
     new_arr = []
 
     my_each do |el|
-      new_arr.push(yield(el))
+      if arg.nil?
+        new_arr.push(yield(el))
+      else
+        new_arr.push(arg.call(el))
+      end
     end
 
     new_arr
